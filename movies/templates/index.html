@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Peliculas{% endblock title %}
+{% block content %}
+    <p class="p-2">En este sitio podras consultar la información de tus peliculas favoritas!</p>
+    <ul class="list-group">
+        {% for movie in movies %}
+        <li class="list-group-item">
+            <a href="movie/{{movie.id}}">{{ movie | capfirst }}</a>
+            <p>{{movie.genre}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
